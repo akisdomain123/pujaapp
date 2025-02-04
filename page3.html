@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+    <script>
+        function getGodDetails() {
+            const params = new URLSearchParams(window.location.search);
+            const godName = params.get("name");
+            document.getElementById("godName").textContent = godName;
+            const worshipMaterials = {
+                "ganesha": "Modaks, Durva grass, Red flowers",
+                "vishnu": "Tulsi leaves, Sandalwood, Yellow flowers",
+                "shiva": "Bael leaves, Milk, Rudraksha",
+                "lakshmi": "Lotus flowers, Coins, Rice",
+                "saraswati": "White flowers, Books, Veena",
+                "parvati": "Turmeric, Kumkum, Red saree",
+                "kali": "Red hibiscus, Meat, Liquor",
+                "durga": "Coconut, Red saree, Sweets",
+                "hanuman": "Sindoor, Bananas, Basil leaves",
+                "rama": "Tulsi leaves, Sweets, Bow & Arrow",
+                "krishna": "Butter, Flute, Peacock feather",
+                "buddha": "Incense, Flowers, Meditation beads",
+                "narasimha": "Tulsi garland, Lion idol, Mantras"
+            };
+            document.getElementById("materials").textContent = "Materials: " + (worshipMaterials[godName.toLowerCase()] || "Unknown");
+        }
+    </script>
+</head>
+<body onload="getGodDetails()">
+    <h1 id="godName"></h1>
+    <p id="materials"></p>
+    <p>Prayer: Om Shanti Shanti Shanti</p>
+</body>
+</html>
